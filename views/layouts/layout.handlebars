@@ -1,0 +1,47 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Lato:ital,wght@0,400;0,900;1,700&family=Rubik:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>{{nombrePagina}}</title>
+  </head>
+
+  <body>
+    <div class="nombre-sitio contenedor">
+      <h1>
+        <a href="/">devJobs</a>
+      </h1>
+
+      {{#if barra}}
+        <div class="buscador">
+          <form action="#">
+            <input type="text" class="buscar" />
+            <input type="submit" value="buscar" />
+          </form>
+        </div>
+      {{/if}}
+    </div>
+
+    <header class="site-header contenedor separador">
+      <h2>{{nombrePagina}}</h2>
+      {{#if tagline}}
+        <p class="tagline">{{tagline}}</p>
+      {{/if}}
+      {{#if boton}}
+        <a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Cante</a>
+      {{/if}}
+    </header>
+
+    <div class="contenido-principal contenedor">
+      {{{body}}}
+    </div>
+  </body>
+
+</html>
