@@ -1,0 +1,27 @@
+{
+  "name": "06-devjobs",
+  "version": "1.0.0",
+  "description": "Portal DevJobs con NodeJS, Handlebars Mongose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonioValentinSayago/devJobs-1.0.0.git"
+  },
+  "author": "Antonio Valenitn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonioValentinSayago/devJobs-1.0.0/issues"
+  },
+  "homepage": "https://github.com/AntonioValentinSayago/devJobs-1.0.0#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
