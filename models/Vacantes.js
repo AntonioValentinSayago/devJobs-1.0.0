@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
+const { Schema } = mongoose;
 mongoose.Promise = global.Promise;
 
 const slug = require('slug')
 const shortid = require('shortid')
 
-const vacantesSchema = new mongoose.Schema({
+const vacantesSchema = new Schema({
     titulo:{
         type:String,
         required: 'El nombre de la vancante es Obligatorio',
@@ -29,7 +30,7 @@ const vacantesSchema = new mongoose.Schema({
         trim:true
     },
     descripcion:{
-        type: String.fromCharCode,
+        type: String,
         trim:true
     },
     url:{
