@@ -25,7 +25,6 @@
     "express-handlebars": "^7.1.2",
     "express-session": "^1.17.3",
     "mongoose": "^7.6.3",
-    "mongose": "^0.0.2-security",
     "session": "^0.1.0",
     "shortid": "^2.2.16",
     "slug": "^8.2.3"
