@@ -1,4 +1,4 @@
-const mongose = require('mongoose')
+const mongoose = require('mongoose')
 require('./config/db');
 
 const express = require('express')
@@ -7,9 +7,9 @@ const path = require('path')
 const router = require('./routes')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 
-require('dotenv').config( {path: '.env'} )
+require('dotenv').config( {path: '.env'} );
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.use(session({
     key: process.env.KEY,
     resave:false,
     saveUninitialized:false,
-    store: new MongoStore({ mongooseConnection: mongose.connection })
+    store: MongoStore.create({ mongoUrl: process.env.DATABASE })
 }))
 
 app.use('/' , router() )
