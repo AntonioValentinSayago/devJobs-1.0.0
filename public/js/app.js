@@ -22,4 +22,3 @@ const agregarSkills = e => {
     const skillsArray = [...skills]
     document.querySelector('#skills').value = skillsArray
 }
-k
