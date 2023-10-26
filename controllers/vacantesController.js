@@ -25,7 +25,6 @@ exports.agregarVacante = async ( req, res ) => {
 }
 
 // ? Muestra una Vacante
-
 exports.mostrarVacante = async ( req, res, next ) => {
     const vacante = await Vacante.findOne({url: req.params.url}).lean()
 
@@ -38,4 +37,32 @@ exports.mostrarVacante = async ( req, res, next ) => {
         nombrePagina: vacante.titulo,
         barra: true
     })
+}
+
+// ? Editar Vacante
+exports.formEditarVacante = async ( req, res, next ) =>{
+    const vacante = await Vacante.findOne({url: req.params.url}).lean()
+
+    // ? Si no existe el resultado
+    if(!vacante) return next()
+
+    // ? Si existe un resultado -> Mostramos la vista
+    res.render('editar-vacante' , {
+        vacante,
+        nombrePagina: `Editar - ${vacante.titulo}`,
+    })
+}
+
+// ? Guardar la vacante a editar
+exports.editarVacante = async ( req, res ) =>{
+    const vacanteActualizada = req.body
+    vacanteActualizada.skills = req.body.skills.split(',')
+
+    const vacante = await Vacante.findOneAndUpdate({url: req.params.url}, vacanteActualizada, {
+        new: true,
+        runValidators: true
+    });
+
+    res.render(`/vacantes/${vacante.url}`);
+
 }
